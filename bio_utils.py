@@ -40,3 +40,8 @@ def toProteins(rnas):
         r = Seq(rna, generic_rna)
         proteins.append(r.translate())
     return proteins
+
+def writeToFile(filepath, data):
+    with open(filepath, 'w') as the_file:
+        for i in data:
+            the_file.write("{}\n\n".format(i))

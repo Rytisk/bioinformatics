@@ -2,3 +2,5 @@ bio-py
 .ipynb_checkpoints
 __pycache__
 .vscode
+out/*.phy
+out/proteins.txt
