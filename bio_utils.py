@@ -20,26 +20,6 @@ class Comparison:
         self.alignment = alignment
     def __str__(self):
         return 'Comparison <Score: {}>'.format(self.alignment.score)
-    
-def toRNAs(orfs):
-    rnas = []
-    for orf in orfs:
-        rnas.append(toRNA(orf.value))
-    return rnas
-
-def toRNA(dna):
-    conv = {"T" : "A", "A" : "U", "C" : "G", "G" : "C"}
-    rna = ""
-    for i in dna:
-        rna += str(conv[i])
-    return rna
-
-def toProteins(rnas):
-    proteins = []
-    for rna in rnas:
-        r = Seq(rna, generic_rna)
-        proteins.append(r.translate())
-    return proteins
 
 def writeToFile(filepath, data):
     with open(filepath, 'w') as the_file:
